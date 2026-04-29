@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,41 +6,41 @@
 
 @layer base {
   :root {
-    --background: 200 30% 96%;
-    --foreground: 210 25% 15%;
+    --background: 0 0% 98%;
+    --foreground: 172 31% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 25% 15%;
+    --card-foreground: 172 31% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 25% 15%;
+    --popover-foreground: 172 31% 15%;
 
-    --primary: 200 60% 45%;
+    --primary: 172 31% 29%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 35 40% 90%;
-    --secondary-foreground: 210 25% 15%;
+    --secondary: 0 44% 81%;
+    --secondary-foreground: 172 31% 20%;
 
-    --muted: 200 20% 92%;
-    --muted-foreground: 210 10% 45%;
+    --muted: 172 10% 92%;
+    --muted-foreground: 172 15% 45%;
 
-    --accent: 35 50% 55%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 0 44% 81%;
+    --accent-foreground: 172 31% 20%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 200 20% 88%;
-    --input: 200 20% 88%;
-    --ring: 200 60% 45%;
+    --border: 172 10% 88%;
+    --input: 172 10% 88%;
+    --ring: 172 31% 29%;
 
-    --radius: 1rem;
+    --radius: 1.5rem;
 
-    --hero-gradient: linear-gradient(135deg, hsl(200 30% 96%) 0%, hsl(200 40% 90%) 50%, hsl(35 30% 92%) 100%);
-    --section-alt: 200 25% 93%;
+    --hero-gradient: linear-gradient(135deg, hsl(0 0% 98%) 0%, hsl(172 20% 94%) 100%);
+    --section-alt: 0 44% 96%;
 
     --font-display: 'Playfair Display', serif;
-    --font-body: 'Inter', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;

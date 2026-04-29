@@ -1,219 +1,244 @@
-import { UserPlus, Calendar, Brain, BookOpen, MapPin, Instagram, MessageCircle, Mail, Phone, ChevronDown } from "lucide-react";
+import { Calendar, Brain, BookOpen, MapPin, Instagram, MessageCircle, Mail, Phone, ChevronDown, CheckCircle2, Quote } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import wagnerImg from "@/assets/wagner.jpeg";
-import heroBg from "@/assets/hero-bg.jpg";
 import brainIcon from "@/assets/brain-icon.png";
-import { downloadVCard } from "@/lib/vcard";
 
 const WHATSAPP_LINK = "https://wa.me/5586998252016?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta.";
 const INSTAGRAM_LINK = "https://instagram.com/wagnerbarrospsi";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background font-body">
+    <div className="min-h-screen bg-background font-body text-foreground">
       {/* Hero Section */}
-      <section className="relative overflow-hidden hero-gradient">
-        <div className="container mx-auto px-4 py-12 md:py-20">
-          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
-            {/* Text */}
-            <div className="flex-1 text-center md:text-left space-y-6 z-10">
-              <div className="flex items-center gap-2 justify-center md:justify-start">
-                <img src={brainIcon} alt="" className="w-8 h-8" />
-                <span className="text-sm font-medium text-muted-foreground tracking-wide uppercase">Psicólogo Clínico</span>
+      <section className="relative overflow-hidden pt-20 pb-16 md:pt-32 md:pb-24 hero-gradient">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+            {/* Photo */}
+            <div className="flex-shrink-0 relative order-2 md:order-1">
+              <div className="w-72 h-72 md:w-[450px] md:h-[450px] rounded-3xl overflow-hidden shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
+                <img src={wagnerImg} alt="Psicólogo Wagner Barros" className="w-full h-full object-cover scale-110" />
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground">
-                O melhor para sua{" "}
-                <span className="text-gradient">Saúde Mental</span>{" "}
-                você encontra aqui!
-              </h1>
-              <p className="text-muted-foreground text-lg max-w-lg mx-auto md:mx-0">
-                Atendimento humanizado e acolhedor para ajudar você a encontrar equilíbrio e bem-estar emocional.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary rounded-full -z-10 blur-2xl opacity-60"></div>
+              <div className="absolute -top-6 -left-6 w-24 h-24 bg-primary/20 rounded-full -z-10 blur-xl"></div>
+            </div>
+
+            {/* Text */}
+            <div className="flex-1 text-center md:text-left space-y-8 order-1 md:order-2">
+              <div className="space-y-4">
+                <div className="inline-flex items-center gap-2 bg-white/50 backdrop-blur-sm px-4 py-2 rounded-full border border-primary/10 shadow-sm">
+                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                  <span className="text-xs font-semibold text-primary uppercase tracking-widest">CRP 21/04332</span>
+                </div>
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] font-display text-primary">
+                  Sua jornada de <br />
+                  <span className="italic font-normal">autoconhecimento</span> <br />
+                  começa aqui.
+                </h1>
+                <p className="text-muted-foreground text-lg md:text-xl max-w-lg leading-relaxed">
+                  Olá, sou o <span className="font-semibold text-foreground">Wagner Barros</span>. 
+                  Ofereço um espaço de acolhimento e escuta qualificada para ajudar você a ressignificar sua história e encontrar equilíbrio emocional.
+                </p>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                 <Button
                   size="lg"
-                  className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 text-base shadow-lg"
-                  onClick={downloadVCard}
-                >
-                  <UserPlus className="mr-2 h-5 w-5" />
-                  Salvar Contato
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="rounded-full px-8 text-base border-primary text-primary hover:bg-primary/10"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-10 h-14 text-lg shadow-xl hover:translate-y-[-2px] transition-all"
                   asChild
                 >
-                  <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                    <Calendar className="mr-2 h-5 w-5" />
-                    Agendar Consulta
+                  <a href="/agendar">
+                    Nossa Agenda
                   </a>
                 </Button>
               </div>
-              <a href="#agendamento" className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors mt-4">
-                Deslize para baixo para acessar links úteis
-                <ChevronDown className="h-4 w-4 animate-bounce" />
-              </a>
-            </div>
-            {/* Photo */}
-            <div className="flex-shrink-0 relative">
-              <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-card shadow-2xl">
-                <img src={wagnerImg} alt="Psicólogo Wagner Barros" className="w-full h-full object-cover" width={384} height={384} />
+              
+              <div className="pt-4 flex items-center gap-6 justify-center md:justify-start text-sm text-muted-foreground">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary" />
+                  <span>Atendimento Online</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-primary" />
+                  <span>Presencial em Parnaíba - Piauí</span>
+                </div>
               </div>
-              <img src={brainIcon} alt="" className="absolute -top-4 -right-4 w-16 h-16 md:w-20 md:h-20 opacity-60" loading="lazy" />
             </div>
           </div>
         </div>
-        {/* Decorative bg */}
-        <img src={heroBg} alt="" className="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none" aria-hidden="true" />
       </section>
 
-      {/* Agendamento Online */}
-      <section id="agendamento" className="py-16 md:py-24 bg-card">
-        <div className="container mx-auto px-4 text-center space-y-6">
-          <div className="flex items-center gap-2 justify-center text-muted-foreground">
-            <img src={brainIcon} alt="" className="w-6 h-6" loading="lazy" />
-            <span className="text-sm font-medium">Wagner Barros</span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Agendamento 100% Online
+      {/* Intro Quote Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <Quote className="w-12 h-12 text-secondary mx-auto mb-8 opacity-40" />
+          <h2 className="text-3xl md:text-4xl font-medium font-display leading-relaxed italic text-primary/80">
+            "A psicoterapia é um investimento em você mesmo. Um espaço seguro onde a sua dor é acolhida e a sua transformação é incentivada."
           </h2>
-          <p className="text-muted-foreground max-w-md mx-auto">
-            Agende sua consulta de forma rápida e prática pelo WhatsApp. Atendimento presencial e online.
-          </p>
-          <Button
-            size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-10 text-base shadow-lg"
-            asChild
-          >
-            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-              Agende sua Consulta
-            </a>
-          </Button>
         </div>
       </section>
 
-      {/* Terapias & Abordagens */}
-      <section className="py-16 md:py-24 section-alt">
+      {/* Atendimentos Section */}
+      <section id="atendimentos" className="py-24 bg-section-alt">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="flex-1 space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Terapias &amp; Abordagens
-              </h2>
-              <p className="text-muted-foreground text-lg">
-                Conheça as diferentes abordagens terapêuticas utilizadas para auxiliar no seu processo de autoconhecimento e bem-estar emocional.
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {[
-                  { icon: Brain, title: "Terapia Cognitivo-Comportamental", desc: "Técnicas para reestruturar pensamentos e comportamentos" },
-                  { icon: BookOpen, title: "Psicoterapia Individual", desc: "Atendimento personalizado para suas necessidades" },
-                  { icon: Brain, title: "Ansiedade e Depressão", desc: "Tratamento especializado para transtornos emocionais" },
-                  { icon: BookOpen, title: "Desenvolvimento Pessoal", desc: "Ferramentas para crescimento e autoconhecimento" },
-                ].map((item, i) => (
-                  <div key={i} className="bg-card rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
-                    <item.icon className="h-8 w-8 text-primary mb-3" />
-                    <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground">{item.desc}</p>
-                  </div>
-                ))}
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="text-4xl md:text-5xl font-bold font-display text-primary">Conheça meus atendimentos!</h2>
+            <div className="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            {/* Online Therapy */}
+            <div className="bg-white rounded-[2.5rem] p-10 md:p-14 shadow-xl shadow-primary/5 hover:shadow-primary/10 transition-all border border-primary/5 flex flex-col gap-6">
+              <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center">
+                <Brain className="w-8 h-8 text-primary" />
               </div>
+              <h3 className="text-2xl md:text-3xl font-bold font-display text-primary">Psicoterapia Online</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Atendimento remoto com o mesmo acolhimento e ética do presencial. Ideal para quem busca flexibilidade, conforto e segurança, sem as barreiras da distância.
+              </p>
+              <ul className="space-y-3 mt-4">
+                {["Horários flexíveis", "Segurança e privacidade", "Conforto do seu lar"].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-sm font-medium">
+                    <CheckCircle2 className="w-5 h-5 text-secondary" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <Button className="mt-auto bg-primary text-white rounded-full py-6 text-lg" asChild>
+                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">Saiba mais</a>
+              </Button>
             </div>
-            <div className="flex-shrink-0">
-              <img src={brainIcon} alt="Saúde Mental" className="w-48 h-48 md:w-64 md:h-64 opacity-80" loading="lazy" width={256} height={256} />
+
+            {/* Specialized Therapy */}
+            <div className="bg-white rounded-[2.5rem] p-10 md:p-14 shadow-xl shadow-primary/5 hover:shadow-primary/10 transition-all border border-primary/5 flex flex-col gap-6">
+              <div className="w-16 h-16 bg-secondary/20 rounded-2xl flex items-center justify-center">
+                <BookOpen className="w-8 h-8 text-secondary-foreground" />
+              </div>
+              <h3 className="text-2xl md:text-3xl font-bold font-display text-primary">Ansiedade e Depressão</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Suporte especializado para lidar com os desafios da saúde mental contemporânea. Através de abordagens baseadas em evidências, trabalhamos na regulação emocional e autoconhecimento.
+              </p>
+              <ul className="space-y-3 mt-4">
+                {["Acompanhamento personalizado", "Escuta sem julgamentos", "Foco no seu bem-estar"].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-sm font-medium">
+                    <CheckCircle2 className="w-5 h-5 text-secondary" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <Button className="mt-auto bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-full py-6 text-lg" asChild>
+                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">Agendar consulta</a>
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Blog / Conteúdo */}
-      <section className="py-16 md:py-24 bg-card">
-        <div className="container mx-auto px-4 text-center space-y-6">
-          <div className="flex items-center gap-2 justify-center text-muted-foreground">
-            <img src={brainIcon} alt="" className="w-6 h-6" loading="lazy" />
-            <span className="text-sm font-medium">Wagner Barros</span>
+      {/* Testimonials */}
+      <section className="py-24 bg-white overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="text-4xl md:text-5xl font-bold font-display text-primary">O que dizem os pacientes</h2>
+            <div className="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Visite nosso Instagram
-          </h2>
-          <p className="text-muted-foreground max-w-lg mx-auto">
-            Conteúdo sobre psicologia, dicas de saúde mental, informações e dicas sobre saúde mental e emocional.
-          </p>
-          <Button
-            size="lg"
-            variant="outline"
-            className="rounded-full px-10 text-base border-primary text-primary hover:bg-primary/10"
-            asChild
-          >
-            <a href={INSTAGRAM_LINK} target="_blank" rel="noopener noreferrer">
-              <Instagram className="mr-2 h-5 w-5" />
-              @wagnerbarrospsi
-            </a>
-          </Button>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              "O Wagner é um profissional extremamente dedicado e atencioso. Senti-me acolhida desde a primeira sessão.",
+              "Excelente psicólogo! Me ajudou muito a lidar com minhas crises de ansiedade. Recomendo demais.",
+              "Um espaço de muita escuta e empatia. Tem sido fundamental para o meu crescimento pessoal."
+            ].map((text, i) => (
+              <div key={i} className="bg-section-alt p-8 rounded-[2rem] relative">
+                <Quote className="w-8 h-8 text-primary/10 absolute top-6 right-6" />
+                <p className="text-muted-foreground italic mb-6 leading-relaxed">"{text}"</p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-secondary/30 rounded-full flex items-center justify-center text-xs font-bold text-primary">
+                    P{i+1}
+                  </div>
+                  <span className="text-sm font-semibold">Paciente</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Localização */}
-      <section className="py-16 md:py-24 section-alt">
-        <div className="container mx-auto px-4 text-center space-y-6">
-          <div className="flex items-center gap-2 justify-center">
-            <MapPin className="h-6 w-6 text-primary" />
-            <span className="text-sm font-medium text-muted-foreground">Atendemos até no WhatsApp</span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">A nossa Localização</h2>
-          <p className="text-muted-foreground max-w-md mx-auto">
-            Atendimento presencial e online. Entre em contato para mais informações sobre endereço e horários.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button
-              className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8"
-              asChild
-            >
-              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                <Phone className="mr-2 h-4 w-4" />
-                (86) 99825-2016
-              </a>
-            </Button>
-            <Button
-              variant="outline"
-              className="rounded-full px-8 border-primary text-primary hover:bg-primary/10"
-              asChild
-            >
-              <a href="mailto:wagnersp2014@hotmail.com">
-                <Mail className="mr-2 h-4 w-4" />
-                wagnersp2014@hotmail.com
-              </a>
+      {/* CTA Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="bg-primary rounded-[3rem] p-12 md:p-20 text-center text-white space-y-8 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+            
+            <h2 className="text-3xl md:text-5xl font-bold font-display max-w-3xl mx-auto leading-tight">
+              Priorize sua saúde mental. Um novo começo é possível hoje mesmo!
+            </h2>
+            <p className="text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto italic">
+              "Investir em psicoterapia é investir no seu ativo mais precioso: você."
+            </p>
+            <Button size="lg" className="bg-white text-primary hover:bg-white/90 rounded-full px-12 h-16 text-xl font-bold shadow-2xl transition-transform hover:scale-105" asChild>
+              <a href="/agendar">Nossa Agenda</a>
             </Button>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-24 bg-section-alt">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="text-4xl md:text-5xl font-bold font-display text-primary">Perguntas Frequentes</h2>
+            <p className="text-muted-foreground">Tire suas principais dúvidas sobre o processo terapêutico.</p>
+          </div>
+          
+          <Accordion type="single" collapsible className="space-y-4">
+            {[
+              { q: "Como funciona a primeira sessão?", a: "A primeira sessão é um momento de acolhimento e conhecimento mútuo. Nela, você poderá compartilhar suas demandas e entender como o processo terapêutico pode te ajudar." },
+              { q: "Qual o tempo de duração das sessões?", a: "As sessões individuais têm duração média de 50 minutos, ocorrendo geralmente uma vez por semana." },
+              { q: "Como funciona o atendimento online?", a: "O atendimento online é realizado via videochamada em plataformas seguras e sigilosas, garantindo a mesma qualidade do atendimento presencial." },
+              { q: "Quais as formas de pagamento?", a: "Trabalhamos com Pix e transferência bancária. Entre em contato para consultar valores e disponibilidade." }
+            ].map((item, i) => (
+              <AccordionItem key={i} value={`item-${i}`} className="bg-white border-none rounded-2xl px-6">
+                <AccordionTrigger className="text-lg font-semibold hover:no-underline py-6">{item.q}</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground pb-6 text-base leading-relaxed">
+                  {item.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 bg-foreground">
+      <footer className="py-16 bg-white border-t border-primary/5">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button
-              className="bg-gradient-to-r from-pink-500 to-purple-500 text-primary-foreground rounded-full px-8 hover:opacity-90"
-              asChild
-            >
-              <a href={INSTAGRAM_LINK} target="_blank" rel="noopener noreferrer">
-                <Instagram className="mr-2 h-5 w-5" />
-                Instagram
-              </a>
-            </Button>
-            <Button
-              className="bg-green-600 text-primary-foreground rounded-full px-8 hover:bg-green-700"
-              asChild
-            >
-              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="mr-2 h-5 w-5" />
-                WhatsApp
-              </a>
-            </Button>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+            <div className="space-y-4 text-center md:text-left">
+              <h3 className="text-2xl font-bold font-display text-primary">Wagner Barros</h3>
+              <p className="text-muted-foreground max-w-xs leading-relaxed">
+                Psicólogo Clínico <br />
+                CRP 21/04332 <br />
+                Parnaíba - Piauí
+              </p>
+            </div>
+            
+            <div className="flex flex-col items-center md:items-end gap-6">
+              <div className="flex items-center gap-4">
+                <a href={INSTAGRAM_LINK} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-section-alt rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+                  <Instagram className="w-5 h-5" />
+                </a>
+                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-section-alt rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+                  <MessageCircle className="w-5 h-5" />
+                </a>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                © {new Date().getFullYear()} Wagner Barros. Todos os direitos reservados.
+              </p>
+              <p className="text-xs font-semibold text-primary/60 hover:text-primary transition-colors">
+                Desenvolvido por <span className="text-primary">DigitalTap</span>
+              </p>
+            </div>
           </div>
-          <p className="text-center text-sm mt-6 opacity-60" style={{ color: 'hsl(0 0% 100%)' }}>
-            © {new Date().getFullYear()} Wagner Barros — Psicólogo. Todos os direitos reservados.
-          </p>
         </div>
       </footer>
 
@@ -222,10 +247,13 @@ const Index = () => {
         href={WHATSAPP_LINK}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-primary-foreground p-4 rounded-full shadow-2xl transition-transform hover:scale-110"
+        className="fixed bottom-8 right-8 z-50 bg-[#25D366] hover:bg-[#128C7E] text-white p-5 rounded-full shadow-[0_10px_40px_rgba(37,211,102,0.4)] transition-all hover:scale-110 active:scale-95 group"
         aria-label="WhatsApp"
       >
-        <MessageCircle className="h-6 w-6" />
+        <MessageCircle className="h-7 w-7" />
+        <span className="absolute right-full mr-4 bg-white text-foreground px-4 py-2 rounded-xl text-sm font-semibold shadow-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-primary/5">
+          Agende sua sessão
+        </span>
       </a>
     </div>
   );
